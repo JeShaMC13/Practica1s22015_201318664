@@ -27,6 +27,7 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+    
     public Principal() {
         initComponents();
     agregar = new ListaDoble();
@@ -50,7 +51,6 @@ public class Principal extends javax.swing.JFrame {
         Koopa = new javax.swing.JButton();
         Hongo = new javax.swing.JButton();
         Ladrillo = new javax.swing.JButton();
-        AGREGAR = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         NOMBRE = new javax.swing.JTextField();
         Tubo = new javax.swing.JButton();
@@ -134,13 +134,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        AGREGAR.setText("Agregar");
-        AGREGAR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AGREGARActionPerformed(evt);
-            }
-        });
-
         jButton2.setText("Edit");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,9 +179,7 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(190, 190, 190)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(NOMBRE, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(AGREGAR, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(NOMBRE, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -221,7 +212,7 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jButton2))))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,9 +220,8 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NOMBRE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AGREGAR))
-                .addGap(35, 35, 35)
+                    .addComponent(NOMBRE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel4))
@@ -279,14 +269,40 @@ public class Principal extends javax.swing.JFrame {
         ImageIcon Moneda = new ImageIcon(getClass(). getResource ( "/mario/Moneda.png" ));
         //Mandamos a imprimir la imagen en un label
         jLabel3.setIcon(Moneda);
-   
+        
+        
+      String nom = NOMBRE.getText();    
+   if (nom.isEmpty()) {
+       JOptionPane.showMessageDialog(this, "llene los campos");
+   }else {
+         
+            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/Moneda.png" ));    
+            ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
+            this.agregar.Agregar(ingresar1);
+            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
+      nom = "";
+   }
+    
     }//GEN-LAST:event_jButton6ActionPerformed
-
+      
     private void HongoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HongoActionPerformed
           //Obtenemos la imagenen del boton
         ImageIcon Hongo = new ImageIcon(getClass(). getResource ( "/mario/Hongo.png" ));
         //Mandamos a imprimir la imagen en un label
         jLabel3.setIcon(Hongo);
+        
+        
+      String nom = NOMBRE.getText();    
+   if (nom.isEmpty()) {
+       JOptionPane.showMessageDialog(this, "llene los campos");
+   }else {
+         
+            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/Hongo.png" ));    
+            ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
+            this.agregar.Agregar(ingresar1);
+            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
+                    
+   }
    
     }//GEN-LAST:event_HongoActionPerformed
 
@@ -306,94 +322,23 @@ public class Principal extends javax.swing.JFrame {
         ImageIcon Ladrillo = new ImageIcon(getClass(). getResource ( "/mario/BlockLadrillo.png" ));
         //Mandamos a imprimir la imagen en un label
         jLabel3.setIcon(Ladrillo);
-    }//GEN-LAST:event_LadrilloActionPerformed
-    
-    private void AGREGARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AGREGARActionPerformed
-
-      String nom = NOMBRE.getText();
-       
-   if (nom == null) {
+        
+        
+      String nom = NOMBRE.getText();    
+   if (nom.isEmpty()) {
        JOptionPane.showMessageDialog(this, "llene los campos");
    }else {
          
-            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/Mario.png" ));    
+            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/BlockLadrillo.png" ));    
             ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
             this.agregar.Agregar(ingresar1);
-            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length()+nom+mar);
+            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
                     
    }
-           /*         
-   
         
-        if(evt.getSource()== Mario){
-            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/Mario.png" ));    
-            ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
-            this.agregar.Agregar(ingresar1);
-            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
-
-        }
-        if(evt.getSource()== Goomba){
-            ImageIcon Goom = new ImageIcon(getClass(). getResource ( "/mario/Goomba.png" ));
-            ObtenerDatos ingresar2 = new ObtenerDatos( nom, Goom);
-            this.agregar.Agregar(ingresar2);
-            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
-
-        }
-        if(evt.getSource()== Koopa){
-            ImageIcon Koop = new ImageIcon(getClass(). getResource ( "/mario/Koopa.png" ));
-            ObtenerDatos ingresar3 = new ObtenerDatos( nom, Koop);
-            this.agregar.Agregar(ingresar3);
-            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
-
-        }
-        if(evt.getSource()== Ladrillo){
-            ImageIcon Lad = new ImageIcon(getClass(). getResource ( "/mario/BlockLadrillo.png" ));
-            ObtenerDatos ingresar4 = new ObtenerDatos( nom, Lad);
-            this.agregar.Agregar(ingresar4);
-            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
-
-        }
-        if(evt.getSource()== Muro){
-            ImageIcon Mur = new ImageIcon(getClass(). getResource ( "/mario/BlockNormal.png" ));
-            ObtenerDatos ingresar5 = new ObtenerDatos( nom, Mur);
-            this.agregar.Agregar(ingresar5);
-            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
-
-        }
-        if(evt.getSource()== Piso){
-            ImageIcon pis = new ImageIcon(getClass(). getResource ( "/mario/BlockRoto.png" ));
-            ObtenerDatos ingresar6 = new ObtenerDatos( nom, pis);
-            this.agregar.Agregar(ingresar6);
-            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
-
-        }
-        if(evt.getSource()== Planta){
-            ImageIcon plat = new ImageIcon(getClass(). getResource ( "/mario/Planta.png" ));
-            ObtenerDatos ingresar7 = new ObtenerDatos( nom, plat);
-            this.agregar.Agregar(ingresar7);
-            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
-
-        }
-        if(evt.getSource()== Sorpresa){
-            ImageIcon sor = new ImageIcon(getClass(). getResource ( "/mario/BlockDuda.png" ));
-            ObtenerDatos ingresar8 = new ObtenerDatos( nom, sor);
-            this.agregar.Agregar(ingresar8);
-            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
-
-        }
-        if(evt.getSource()== Tubo){
-            ImageIcon tub = new ImageIcon(getClass(). getResource ( "/mario/jajaja.png" ));
-            ObtenerDatos ingresar9 = new ObtenerDatos(nom, tub);
-            this.agregar.Agregar(ingresar9);
-            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
         
-        }*/
-        
-       
-        
-
-    }//GEN-LAST:event_AGREGARActionPerformed
-
+    }//GEN-LAST:event_LadrilloActionPerformed
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JOptionPane.showMessageDialog(null,"Hola");
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -409,6 +354,19 @@ public class Principal extends javax.swing.JFrame {
         ImageIcon Mario = new ImageIcon(getClass(). getResource ( "/mario/Mario.png" ));
         //Mandamos a imprimir la imagen en un label
         jLabel3.setIcon(Mario);
+        
+        
+      String nom = NOMBRE.getText();    
+   if (nom.isEmpty()) {
+       JOptionPane.showMessageDialog(this, "llene los campos");
+   }else {
+         
+            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/Mario.png" ));    
+            ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
+            this.agregar.Agregar(ingresar1);
+            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
+                    
+   }
    
     }//GEN-LAST:event_MarioActionPerformed
 
@@ -417,6 +375,16 @@ public class Principal extends javax.swing.JFrame {
         //Mandamos a imprimir la imagen en un label
         jLabel3.setIcon(Piso);
         
+      String nom = NOMBRE.getText();    
+   if (nom.isEmpty()) {
+       JOptionPane.showMessageDialog(this, "llene los campos");
+   }else { 
+            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/BlockRoto.png" ));    
+            ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
+            this.agregar.Agregar(ingresar1);
+            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());          
+   }
+        
     }//GEN-LAST:event_PisoActionPerformed
 
     private void GoombaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoombaActionPerformed
@@ -424,6 +392,19 @@ public class Principal extends javax.swing.JFrame {
         ImageIcon Goomba = new ImageIcon(getClass(). getResource ( "/mario/Goomba.png" ));
         //Mandamos a imprimir la imagen en un label
         jLabel3.setIcon(Goomba);
+    
+        
+      String nom = NOMBRE.getText();    
+   if (nom.isEmpty()) {
+       JOptionPane.showMessageDialog(this, "llene los campos");
+   }else {
+         
+            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/Goomba.png" ));    
+            ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
+            this.agregar.Agregar(ingresar1);
+            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
+                    
+   }
         
     }//GEN-LAST:event_GoombaActionPerformed
 
@@ -433,6 +414,17 @@ public class Principal extends javax.swing.JFrame {
         //Mandamos a imprimir la imagen en un label
         jLabel3.setIcon(Koopa);
    
+      String nom = NOMBRE.getText();    
+   if (nom.isEmpty()) {
+       JOptionPane.showMessageDialog(this, "llene los campos");
+   }else {
+         
+            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/Koopa.png" ));    
+            ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
+            this.agregar.Agregar(ingresar1);
+            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
+                    
+   }
     }//GEN-LAST:event_KoopaActionPerformed
 
     private void PlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlantaActionPerformed
@@ -441,13 +433,36 @@ public class Principal extends javax.swing.JFrame {
         //Mandamos a imprimir la imagen en un label
         jLabel3.setIcon(Planta);
    
+      String nom = NOMBRE.getText();    
+   if (nom.isEmpty()) {
+       JOptionPane.showMessageDialog(this, "llene los campos");
+   }else {
+         
+            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/Planta.png" ));    
+            ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
+            this.agregar.Agregar(ingresar1);
+            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
+                    
+   }
     }//GEN-LAST:event_PlantaActionPerformed
 
     private void MuroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MuroActionPerformed
           //Obtenemos la imagenen del boton
-        ImageIcon Muro = new ImageIcon(getClass(). getResource ( "/mario/LadrilloNormal.png" ));
+        ImageIcon Muro = new ImageIcon(getClass(). getResource ( "/mario/BlockNormal.png" ));
         //Mandamos a imprimir la imagen en un label
         jLabel3.setIcon(Muro);
+        
+      String nom = NOMBRE.getText();    
+   if (nom.isEmpty()) {
+       JOptionPane.showMessageDialog(this, "llene los campos");
+   }else {
+         
+            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/BlockNormal.png" ));    
+            ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
+            this.agregar.Agregar(ingresar1);
+            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
+                    
+   }
    
     }//GEN-LAST:event_MuroActionPerformed
 
@@ -456,6 +471,18 @@ public class Principal extends javax.swing.JFrame {
         ImageIcon Sorpresa = new ImageIcon(getClass(). getResource ( "/mario/BlockDuda.png" ));
         //Mandamos a imprimir la imagen en un label
         jLabel3.setIcon(Sorpresa);
+        
+      String nom = NOMBRE.getText();    
+   if (nom.isEmpty()) {
+       JOptionPane.showMessageDialog(this, "llene los campos");
+   }else {
+         
+            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/BlockDuda.png" ));    
+            ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
+            this.agregar.Agregar(ingresar1);
+            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
+                    
+   }
    
     }//GEN-LAST:event_SorpresaActionPerformed
 
@@ -464,7 +491,18 @@ public class Principal extends javax.swing.JFrame {
         ImageIcon Tubo = new ImageIcon(getClass(). getResource ( "/mario/jajaja.png" ));
         //Mandamos a imprimir la imagen en un label
         jLabel3.setIcon(Tubo);
-   
+
+      String nom = NOMBRE.getText();    
+   if (nom.isEmpty()) {
+       JOptionPane.showMessageDialog(this, "llene los campos");
+   }else {
+         
+            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/jajaja.png" ));    
+            ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
+            this.agregar.Agregar(ingresar1);
+            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
+                    
+   }   
     }//GEN-LAST:event_TuboActionPerformed
 
     /**
@@ -506,7 +544,6 @@ public class Principal extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AGREGAR;
     private javax.swing.JButton Goomba;
     private javax.swing.JButton Hongo;
     private javax.swing.JButton Koopa;
