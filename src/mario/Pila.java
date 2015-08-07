@@ -10,8 +10,8 @@ package mario;
  * @author Jenny
  */
 public class Pila {
-    //Necesito hacer un push para insertar lelementos a la pila
-    //Necesito hacer un pop pra rechuperar un objeto de la pila
+    //Necesito hacer un push para insertar elementos a la pila
+    //Necesito hacer un pop para rehuperar un objeto de la pila
     // Obtener un objeto de la cima sin extraerlo
     //Averiguar si hay un objeto en la pila
     //Devolver el numero de objetos en la pila
@@ -24,6 +24,10 @@ public class Pila {
         fin = null;
         size =0;
 }
+   public boolean isEmpty() {
+
+    return (size == 0);
+  }
     public Pila(Object o){
      /*Node new_node = new Node(o);
     if (end == null)
