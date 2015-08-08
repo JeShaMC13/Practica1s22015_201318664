@@ -288,7 +288,10 @@ public class Principal extends javax.swing.JFrame {
             ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
             this.agregar.Agregar(ingresar1);
             JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
-      nom = "";
+           // JOptionPane.showMessageDialog(null, agregar.Agregar(ingresar1));
+      
+
+//pila.Push();
    }
     
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -309,7 +312,7 @@ public class Principal extends javax.swing.JFrame {
             ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
             this.agregar.Agregar(ingresar1);
             JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
-                    
+          //pila.push(ingresar1);        
    }
    
     }//GEN-LAST:event_HongoActionPerformed
@@ -341,7 +344,7 @@ public class Principal extends javax.swing.JFrame {
             ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
             this.agregar.Agregar(ingresar1);
             JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
-                    
+                    pila.Push(ingresar1);
    }
         
         

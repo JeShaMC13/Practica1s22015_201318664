@@ -6,6 +6,8 @@
 
 package mario;
 
+import java.awt.Graphics;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 /**
@@ -21,22 +23,21 @@ public class ObtenerDatos {
       this.Nombre = nombre;
       this.Imagen = imagen;
    }
-  
-  
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+
+    public ImageIcon getImagen() {
+        return Imagen;
     }
 
     public void setImagen(ImageIcon Imagen) {
         this.Imagen = Imagen;
     }
 
-    public String getNombre() {
-        return Nombre;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
-    public ImageIcon getImagen() {
-        return Imagen;
-    }
-   
+  
+    public String getNombre() {
+        return Nombre;
+    }   
 }

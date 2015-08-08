@@ -46,7 +46,7 @@ NodoPila ant;
         
     }
     
-    public void Push(Object dato2){
+    public void Push(ObtenerDatos dato2){
         if(primero == null){
             primero = new NodoPila(dato2);
             ultimo = primero;
@@ -55,6 +55,21 @@ NodoPila ant;
             ultimo.siguiente1 = nuevo;
             ultimo = nuevo;
         }
+        listacompleta();
+        /*
+         public void insertarPush(Object dato){
+        if(Primero==null){//////////1 caso(lista vacia)
+        Primero = new NodoListaPila(dato);
+        Ultimo = Primero;
+        }
+        else{
+            Nuevo = new NodoListaPila(Ultimo, dato);
+            Ultimo.Der = Nuevo;
+            Ultimo = Nuevo;
+        }despliegaListaPila();
+    }
+        */
+        
     }
         public void Pop(){
             if(primero == null){
@@ -78,11 +93,34 @@ NodoPila ant;
         while(aux!=null){
              /*MostrarObjetos objetos = new MostrarObjetos();
              objetos.add((Component) aux.dato1);*/
-            JOptionPane.showMessageDialog(null, aux.dato1);
-        aux = aux.siguiente1;
+           // Mostrar mostrar = new Mostrar();
+             JOptionPane.showMessageDialog(null, "Lista"+aux.dato1);
+             System.out.println(aux.dato1);      
+             
+             aux = aux.siguiente1;
         }
         
+        /*
+        public  void despliegaListaPila(){
+        Aux = Primero;
+        System.out.println ("#########   LISTA COMPLETA   ###########");
+        while (Aux != null) {
+            System.out.println (Aux.info);
+            Aux = Aux.Der;
         }
+        System.out.println ("########################################");
+    }
+}
+        */
+        
+        
+        
+        
+        }
+
+    void push(ObtenerDatos ingresar1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
         
         
         
