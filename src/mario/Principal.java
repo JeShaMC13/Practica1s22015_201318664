@@ -24,7 +24,7 @@ public class Principal extends javax.swing.JFrame {
 
     
     private ListaDoble agregar;
-    private NodoPila pila;
+    private Pila pila;
     /**
      * Creates new form Principal
      */
@@ -32,7 +32,8 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
     agregar = new ListaDoble();
-    pila = new NodoPila();
+    pila = new Pila();
+
     }
 
     /**
@@ -350,8 +351,7 @@ public class Principal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,"Hola");
         Mostrar MOSTRAR = new Mostrar();
         MOSTRAR.setVisible(true);
-      
-                
+        
         
     }//GEN-LAST:event_jButton2ActionPerformed
 

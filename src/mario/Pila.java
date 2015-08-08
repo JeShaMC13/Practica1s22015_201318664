@@ -6,6 +6,8 @@
 
 package mario;
 
+import java.awt.Component;
+import java.awt.PopupMenu;
 import javax.swing.JOptionPane;
 
 /**
@@ -74,9 +76,12 @@ NodoPila ant;
             aux = primero;
              JOptionPane.showMessageDialog(null, "Lista completa");
         while(aux!=null){
-             JOptionPane.showMessageDialog(null, "Lista completa"+ aux.dato1);
+             /*MostrarObjetos objetos = new MostrarObjetos();
+             objetos.add((Component) aux.dato1);*/
+            JOptionPane.showMessageDialog(null, aux.dato1);
         aux = aux.siguiente1;
         }
+        
         }
         
         
