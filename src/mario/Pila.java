@@ -5,6 +5,9 @@
  */
 
 package mario;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jenny
@@ -15,20 +18,15 @@ public class Pila {
     // Obtener un objeto de la cima sin extraerlo
     //Averiguar si hay un objeto en la pila
     //Devolver el numero de objetos en la pila
-    Object elemento;
-    Nodo siguiente;
-    Nodo fin;
-    int size;
+NodoPila primero;
+NodoPila ultimo;
+NodoPila nuevo;
+NodoPila aux;
+NodoPila pos;
+NodoPila ant;
+    
     
     public Pila(){
-        fin = null;
-        size =0;
-}
-   public boolean isEmpty() {
-
-    return (size == 0);
-  }
-    public Pila(Object o){
      /*Node new_node = new Node(o);
     if (end == null)
       end = new_node;
@@ -37,11 +35,53 @@ public class Pila {
       end = new_node;
     }
     size++; */
-      
+      primero = null;
+      ultimo= null;
+      nuevo = null;
+      aux = null;
+      pos = null;
+      ant = null;
         
     }
     
-    
+    public void Push(Object dato2){
+        if(primero == null){
+            primero = new NodoPila(dato2);
+            ultimo = primero;
+      }else{
+            nuevo = new NodoPila(ultimo, dato2);
+            ultimo.siguiente1 = nuevo;
+            ultimo = nuevo;
+        }
+    }
+        public void Pop(){
+            if(primero == null){
+                 JOptionPane.showMessageDialog(null, "Lista vacia");
+            }else{
+                if(primero==ultimo){
+                    primero = null;
+                    ultimo= null;
+                    
+                }else{
+                    ultimo= ultimo.anterior1;
+                    ultimo.siguiente1 = null;
+                }
+            }
+            
+        }
+        
+        public void listacompleta(){
+            aux = primero;
+             JOptionPane.showMessageDialog(null, "Lista completa");
+        while(aux!=null){
+             JOptionPane.showMessageDialog(null, "Lista completa"+ aux.dato1);
+        aux = aux.siguiente1;
+        }
+        }
+        
+        
+        
+    }
     /*
     public class LinkedStack {
 
@@ -104,4 +144,4 @@ public class Pila {
 
 } // class LinkedStack    */
     
-}
+
