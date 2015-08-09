@@ -141,13 +141,21 @@ ImageIcon jajaja =new ImageIcon("jajaja"); */
     
     public ObtenerDatos getNextAgregar(){
         if(registro == null){
+            return null;
         }else{
             if(this.registro!=null){
             ObtenerDatos temp;
             temp = this.registro.getDatos();
             this.registro = this.registro.getSiguiente();
-            }
+            return temp;
+            }else
+                 return null;
         }
+       
+        
+    }
+}
+
         
    
             
@@ -174,7 +182,7 @@ ImageIcon jajaja =new ImageIcon("jajaja"); */
         this.registroActual= this.primerNodo;
     }
     */
-    
+  
     
        
   
@@ -206,20 +214,4 @@ ImageIcon jajaja =new ImageIcon("jajaja"); */
        }
        */
        
-       
-       
-       
-       
-       
-       
-       
-       
-}
-
-        
-
-    
-    
-    
-    
-
+      
