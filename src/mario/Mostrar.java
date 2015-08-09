@@ -19,11 +19,13 @@ public class Mostrar extends javax.swing.JFrame {
      */
     private Pila pila;
     private ListaDoble datos;
+    ObtenerDatos obtener;
     
     public Mostrar() {
         initComponents();
     pila = new Pila();
     datos = new ListaDoble();
+ 
     
     }
 
@@ -73,9 +75,9 @@ public class Mostrar extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                            .addComponent(jLabel1)
+                            .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,36 +89,61 @@ public class Mostrar extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton1))
                 .addGap(18, 18, 18)
-                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
+     
+        String mostrar="";
+        this.datos.Agregar();
+        
+        ListaDoble lista;
+        lista = this.datos.getClass();
+        
+        
+        
+        /*
+        
+        // mostrar usuarios
+        String mostrar = " ";
+        this.usuario.ResetUsuario();
+
+        Usuario usuarioTemporal;
+        usuarioTemporal = this.usuario.getNextUsuario();
+
+        while (usuarioTemporal != null) {
+            mostrar = mostrar + "Datos del Remitente:  \n"
+                    + "ID:  " + usuarioTemporal.getId_re() + "\n"
+                    + "Nombre:          " + usuarioTemporal.getNombre() + "  " + usuarioTemporal.getApellido2() + "\n"
+                    + "Direccion:       " + usuarioTemporal.getDireccion() + "\n"
+                    + "Nacionalidad:    " + usuarioTemporal.getNacionalidad() + "\n"
+                    + "Mail :           " + usuarioTemporal.getMail() + " \n\n"
+                    + "Datos del Beneficiario: \n"
+                    + "ID:  " + usuarioTemporal.getId_be() + "\n"
+                    + "Nombre:          " + usuarioTemporal.getNombre2() + "  " + usuarioTemporal.getApellido() + "\n"
+                    + "Direccion:       " + usuarioTemporal.getDireccion2() + "\n"
+                    + "Nacionalidad:    " + usuarioTemporal.getNacionalidad2() + "\n"
+                    + "Mail :           " + usuarioTemporal.getMail2() + "================Fin de linea ============ \n\n";
+
+            usuarioTemporal = this.usuario.getNextUsuario();
+        }
+        salidaUsuario.setText(mostrar);
+
+
+        */
+        /*
         if(!datos.EstaVacia()){
            JOptionPane.showMessageDialog(null,"Esta vacia");  
         }else{
-        //pila.Push(datos);
-        pila.Push(datos);
- /*     MostrarObjetos MostrarObjetos= new MostrarObjetos();
-        MostrarObjetos;
-        MostrarObjetos.setVisible(true);
+    
+        pila.Push(obtener);
+    
+        }   
         */
-        
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

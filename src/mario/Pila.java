@@ -55,6 +55,7 @@ NodoPila ant;
             ultimo.siguiente1 = nuevo;
             ultimo = nuevo;
         }
+            
         listacompleta();
         /*
          public void insertarPush(Object dato){
@@ -118,11 +119,7 @@ NodoPila ant;
         
         }
 
-    void push(ObtenerDatos ingresar1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-        
-        
+    
         
     }
     /*
