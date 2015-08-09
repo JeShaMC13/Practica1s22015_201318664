@@ -19,7 +19,7 @@ public class Mostrar extends javax.swing.JFrame {
      */
     private Pila pila;
     private ListaDoble datos;
-    ObtenerDatos obtener;
+ 
     
     public Mostrar() {
         initComponents();
@@ -41,7 +41,7 @@ public class Mostrar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        scroll = new javax.swing.JScrollPane();
+        MOSTRAR = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,6 +61,8 @@ public class Mostrar extends javax.swing.JFrame {
             }
         });
 
+        MOSTRAR.setText("jLabel2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -76,8 +78,8 @@ public class Mostrar extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(49, Short.MAX_VALUE))
+                            .addComponent(MOSTRAR, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,8 +91,8 @@ public class Mostrar extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton1))
                 .addGap(18, 18, 18)
-                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(MOSTRAR, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(136, Short.MAX_VALUE))
         );
 
         pack();
@@ -101,51 +103,18 @@ public class Mostrar extends javax.swing.JFrame {
         String mostrar="";
         this.datos.Agregar();
         
-        ListaDoble lista;
+        ObtenerDatos lista;
         lista = this.datos.getNextAgregar();
-        mostrar=mostrar +
+        while(lista != null){
+        mostrar=mostrar + "Nombre:" + lista.getNombre()+" " + "Objeto:" +lista.getImagen()+"Fin objetos";
+        lista = this.datos.getNextAgregar();
         
-        
-        
-        
-        /*
-        
-        // mostrar usuarios
-        String mostrar = " ";
-        this.usuario.ResetUsuario();
-
-        Usuario usuarioTemporal;
-        usuarioTemporal = this.usuario.getNextUsuario();
-
-        while (usuarioTemporal != null) {
-            mostrar = mostrar + "Datos del Remitente:  \n"
-                    + "ID:  " + usuarioTemporal.getId_re() + "\n"
-                    + "Nombre:          " + usuarioTemporal.getNombre() + "  " + usuarioTemporal.getApellido2() + "\n"
-                    + "Direccion:       " + usuarioTemporal.getDireccion() + "\n"
-                    + "Nacionalidad:    " + usuarioTemporal.getNacionalidad() + "\n"
-                    + "Mail :           " + usuarioTemporal.getMail() + " \n\n"
-                    + "Datos del Beneficiario: \n"
-                    + "ID:  " + usuarioTemporal.getId_be() + "\n"
-                    + "Nombre:          " + usuarioTemporal.getNombre2() + "  " + usuarioTemporal.getApellido() + "\n"
-                    + "Direccion:       " + usuarioTemporal.getDireccion2() + "\n"
-                    + "Nacionalidad:    " + usuarioTemporal.getNacionalidad2() + "\n"
-                    + "Mail :           " + usuarioTemporal.getMail2() + "================Fin de linea ============ \n\n";
-
-            usuarioTemporal = this.usuario.getNextUsuario();
         }
-        salidaUsuario.setText(mostrar);
-
-
-        */
-        /*
-        if(!datos.EstaVacia()){
-           JOptionPane.showMessageDialog(null,"Esta vacia");  
-        }else{
-    
-        pila.Push(obtener);
-    
-        }   
-        */
+        MOSTRAR.setText(mostrar);
+        
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -188,9 +157,9 @@ public class Mostrar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel MOSTRAR;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane scroll;
     // End of variables declaration//GEN-END:variables
 }

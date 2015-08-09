@@ -19,8 +19,9 @@ public class Mario {
     public static void main(String[] args) {
         Principal a =  new Principal();
         ListaDoble ListaDoblementeEnlazada = new ListaDoble();
-        
-       a.setVisible(true);
+        Mostrar m = new Mostrar();
+        m.setVisible(true);
+        a.setVisible(true);
     }
     
 }

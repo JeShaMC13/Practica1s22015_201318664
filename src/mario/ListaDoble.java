@@ -16,7 +16,11 @@ import javax.swing.JOptionPane;
  * @author Jenny
  */
 public class ListaDoble {
-
+  private Nodo Inicio;
+    private Nodo Fin;
+    private Nodo registro;
+    private int length;
+            
     
 
     public Nodo getInicio() {
@@ -50,24 +54,9 @@ public class ListaDoble {
     public void setLength(int length) {
         this.length = length;
     }
-    private static final Logger LOG = Logger.getLogger(ListaDoble.class.getName());
-    private Nodo Inicio;
-    private Nodo Fin;
-    private Nodo registro;
-    private int length;
-            
-/*ImageIcon Mario =new ImageIcon("Mario.png"); 
-ImageIcon BlockDuda =new ImageIcon("BlockDuda.png"); 
-ImageIcon BlockLadrillo =new ImageIcon("BlockLadrillo.png"); 
-ImageIcon BlockNormal =new ImageIcon("BlockNormal.png"); 
-ImageIcon BlockRoto =new ImageIcon("BlockRoto.png"); 
-ImageIcon Goomba =new ImageIcon("Goomba.png"); 
-ImageIcon Hongo =new ImageIcon("Hongo.png"); 
-ImageIcon Koopa =new ImageIcon("Koopa.png"); 
-ImageIcon LadriloVerde =new ImageIcon("LadrilloVerde.png"); 
-ImageIcon Moneda =new ImageIcon("Moneda.png"); 
-ImageIcon Planta =new ImageIcon("Planta.png"); 
-ImageIcon jajaja =new ImageIcon("jajaja"); */
+
+  
+
        
     //Metodo para saber si la lista esta vacia
     public boolean EstaVacia(){
@@ -132,7 +121,7 @@ ImageIcon jajaja =new ImageIcon("jajaja"); */
         }
         this.length++;
     }
-      
+  
     public void Agregar(){
         this.registro = this.Inicio;
     }
@@ -156,35 +145,28 @@ ImageIcon jajaja =new ImageIcon("jajaja"); */
     }
 }
 
-        
-   
-            
-        /*public Ventas getNextRemesa() {
+        /*
+  public Usuario getNextUsuario() {
         if (registroActual == null) {
             return null;
         } else {
+            
+
             if (this.registroActual != null) {
 
-                Ventas Temporal;
-                Temporal = this.registroActual.getRemesa();
-                this.registroActual = this.registroActual.getSiguiente();
+                Usuario Temporal;
+                Temporal = this.registroActual.getUsuario();
+                this.registroActual = this.registroActual.getSiguiente1();
                 return Temporal;
             } else 
                 return null;
             
 
         }
-    */
-    
-  
-    /*
-    public void ResetRemesa(){
-        this.registroActual= this.primerNodo;
-    }
-    */
-  
-    
-       
+     
+*/
+   
+         
   
     /*  
     //Metodo para mostrar la lista de inicio a fin
