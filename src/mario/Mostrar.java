@@ -102,7 +102,8 @@ public class Mostrar extends javax.swing.JFrame {
         this.datos.Agregar();
         
         ListaDoble lista;
-        lista = this.datos.getClass();
+        lista = this.datos.getNextAgregar();
+        
         
         
         

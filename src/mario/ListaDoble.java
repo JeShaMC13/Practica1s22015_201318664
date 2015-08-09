@@ -7,6 +7,7 @@
 package mario;
 
 import java.awt.event.ActionEvent;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -15,6 +16,41 @@ import javax.swing.JOptionPane;
  * @author Jenny
  */
 public class ListaDoble {
+
+    
+
+    public Nodo getInicio() {
+        return Inicio;
+    }
+
+    public Nodo getFin() {
+        return Fin;
+    }
+
+    public Nodo getRegistro() {
+        return registro;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setInicio(Nodo Inicio) {
+        this.Inicio = Inicio;
+    }
+
+    public void setFin(Nodo Fin) {
+        this.Fin = Fin;
+    }
+
+    public void setRegistro(Nodo registro) {
+        this.registro = registro;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+    private static final Logger LOG = Logger.getLogger(ListaDoble.class.getName());
     private Nodo Inicio;
     private Nodo Fin;
     private Nodo registro;
@@ -70,15 +106,18 @@ ImageIcon jajaja =new ImageIcon("jajaja"); */
            
        }
        } */
+      public int Length() {
+
+        return this.length;
+    }
+
+       
     
     public ListaDoble() {
         this.length = 0;
     }
     
-    
-        
-    
-    public void Agregar(ObtenerDatos datos){
+      public void Agregar(ObtenerDatos datos){
         Nodo adicional = new Nodo(datos);
         if(this.Inicio == null){
             this.Inicio = adicional;
@@ -93,13 +132,52 @@ ImageIcon jajaja =new ImageIcon("jajaja"); */
         }
         this.length++;
     }
-       
-    public int Length() {
-
-        return this.length;
+      
+    public void Agregar(){
+        this.registro = this.Inicio;
     }
+    
+    
+    
+    public ObtenerDatos getNextAgregar(){
+        if(registro == null){
+        }else{
+            if(this.registro!=null){
+            ObtenerDatos temp;
+            temp = this.registro.getDatos();
+            this.registro = this.registro.getSiguiente();
+            }
+        }
+        
+   
+            
+        /*public Ventas getNextRemesa() {
+        if (registroActual == null) {
+            return null;
+        } else {
+            if (this.registroActual != null) {
 
+                Ventas Temporal;
+                Temporal = this.registroActual.getRemesa();
+                this.registroActual = this.registroActual.getSiguiente();
+                return Temporal;
+            } else 
+                return null;
+            
+
+        }
+    */
+    
+  
+    /*
+    public void ResetRemesa(){
+        this.registroActual= this.primerNodo;
+    }
+    */
+    
+    
        
+  
     /*  
     //Metodo para mostrar la lista de inicio a fin
        
