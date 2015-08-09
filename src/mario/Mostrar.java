@@ -6,6 +6,7 @@
 
 package mario;
 
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -110,10 +111,10 @@ public class Mostrar extends javax.swing.JFrame {
         lista = this.datos.getNextAgregar();
         
         }
-        MOSTRAR.setText(mostrar);
-        
-        
-        
+       // MOSTRAR.setText(mostrar);
+        JLabel contenido = new JLabel(mostrar);
+        getContentPane().add(contenido);
+        this.setSize(500, 500);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

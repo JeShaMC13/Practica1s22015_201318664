@@ -63,38 +63,7 @@ public class ListaDoble {
         return Inicio==null;
     }
  
-    /*
-    
-    //Metodo para agregar nodos al final
-    
-    public void AgregarFinal(int El){
-       if(!EstaVacia()){
-           Fin = new Nodo(El, null, Fin);
-           Fin.anterior.siguiente = Fin;
-           
-       }else{
-       //Es para cuanto un no hay nodos
-           Inicio= new Nodo(El);
-           Fin = new Nodo(El);
-           
-       }
-      
-       }
-      */ 
-    /*
-    //Metodo para agregar nodos al inicio 
-       public void AgregarInicio(int El){
-       if(!EstaVacia()){
-           Inicio = new Nodo(El,Inicio, null);
-           Inicio.siguiente.anterior = Inicio;
-           
-       }else{
-           //Es para cuando hay no hay nodos
-           Inicio= new Nodo(El);
-           Fin = new Nodo(El);
-           
-       }
-       } */
+  
       public int Length() {
 
         return this.length;
@@ -145,55 +114,5 @@ public class ListaDoble {
     }
 }
 
-        /*
-  public Usuario getNextUsuario() {
-        if (registroActual == null) {
-            return null;
-        } else {
-            
 
-            if (this.registroActual != null) {
-
-                Usuario Temporal;
-                Temporal = this.registroActual.getUsuario();
-                this.registroActual = this.registroActual.getSiguiente1();
-                return Temporal;
-            } else 
-                return null;
-            
-
-        }
-     
-*/
-   
-         
-  
-    /*  
-    //Metodo para mostrar la lista de inicio a fin
-       
-     
-       public void MostrarListaInicioFin(){
-      if(!EstaVacia()){
-          String datos ="<=>";
-                  Nodo auxiliar = Inicio;
-                  while (auxiliar!= null){
-                      datos = datos + "[" + auxiliar.dato + "] <=>";
-                      auxiliar = auxiliar.siguiente;
-                  }
-                  JOptionPane.showMessageDialog(null, datos,"Mostrar lista de inicio a fin", JOptionPane.INFORMATION_MESSAGE);
-      }
-       }
-             public void MostrarListaFinInicio(){
-      if(!EstaVacia()){
-          String datos ="<=>";
-                  Nodo auxiliar = Fin;
-                  while (auxiliar!= null){
-                      datos = datos + "[" + auxiliar.dato + "] <=>";
-                      auxiliar = auxiliar.anterior;
-                  }
-                  JOptionPane.showMessageDialog(null, datos,"Mostrar lista de inicio a fin", JOptionPane.INFORMATION_MESSAGE);
-      }           
-       }
-       */
-       
       
