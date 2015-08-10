@@ -62,6 +62,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        IMAGEN = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -172,6 +174,18 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel4.setText("Accesorios");
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario/images.jpeg"))); // NOI18N
+        jButton1.setText("Castillo");
+        jButton1.setToolTipText("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        IMAGEN.setForeground(new java.awt.Color(204, 0, 204));
+        IMAGEN.setText("IMAGEN");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -179,51 +193,54 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(NOMBRE, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(120, 120, 120)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Mario, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Goomba)
+                            .addComponent(Koopa))
+                        .addGap(17, 17, 17)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(190, 190, 190)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(NOMBRE, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(110, 110, 110)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(120, 120, 120)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Sorpresa)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(Mario, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(Goomba)
-                                                .addComponent(Koopa))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(Planta, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(33, 33, 33)))
+                                        .addGap(13, 13, 13)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(30, 30, 30)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(Muro)
-                                                    .addComponent(Ladrillo)
-                                                    .addComponent(Piso)
-                                                    .addComponent(Sorpresa))
-                                                .addGap(53, 53, 53)
-                                                .addComponent(jLabel3))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(27, 27, 27)
-                                                .addComponent(Tubo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Hongo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(60, 60, 60)
-                                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 29, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                                            .addComponent(Muro)
+                                            .addComponent(Ladrillo))))
+                                .addGap(66, 66, 66)
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(Piso)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(IMAGEN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(Planta, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(Tubo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(Hongo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(jButton1)
+                        .addGap(113, 113, 113)
                         .addComponent(jButton2)))
-                .addContainerGap())
+                .addGap(113, 113, 113))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,23 +265,30 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(Muro)
                         .addGap(13, 13, 13)
                         .addComponent(Ladrillo)
-                        .addGap(13, 13, 13)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Piso)
-                            .addComponent(jLabel3))
+                            .addComponent(IMAGEN))
                         .addGap(19, 19, 19)
-                        .addComponent(Sorpresa)))
-                .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Sorpresa))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(267, 267, 267)
+                        .addComponent(jLabel3)))
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Planta, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Tubo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(Tubo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Hongo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(22, 22, 22))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jButton2))))
         );
 
         jLabel3.getAccessibleContext().setAccessibleName("imagen");
@@ -276,7 +300,7 @@ public class Principal extends javax.swing.JFrame {
          //Obtenemos la imagenen del boton
         ImageIcon Moneda = new ImageIcon(getClass(). getResource ( "/mario/Moneda.png" ));
         //Mandamos a imprimir la imagen en un label
-        jLabel3.setIcon(Moneda);
+       IMAGEN.setIcon(Moneda);
         
         
       String nom = NOMBRE.getText();    
@@ -301,7 +325,7 @@ public class Principal extends javax.swing.JFrame {
           //Obtenemos la imagenen del boton
         ImageIcon Hongo = new ImageIcon(getClass(). getResource ( "/mario/Hongo.png" ));
         //Mandamos a imprimir la imagen en un label
-        jLabel3.setIcon(Hongo);
+        IMAGEN.setIcon(Hongo);
         
         
       String nom = NOMBRE.getText();    
@@ -333,7 +357,7 @@ public class Principal extends javax.swing.JFrame {
         //Obtenemos la imagenen del boton
         ImageIcon Ladrillo = new ImageIcon(getClass(). getResource ( "/mario/BlockLadrillo.png" ));
         //Mandamos a imprimir la imagen en un label
-        jLabel3.setIcon(Ladrillo);
+       IMAGEN.setIcon(Ladrillo);
         
         
       String nom = NOMBRE.getText();    
@@ -370,7 +394,7 @@ public class Principal extends javax.swing.JFrame {
        //Obtenemos la imagenen del boton
         ImageIcon Mario = new ImageIcon(getClass(). getResource ( "/mario/Mario.png" ));
         //Mandamos a imprimir la imagen en un label
-        jLabel3.setIcon(Mario);
+        IMAGEN.setIcon(Mario);
         
         
       String nom = NOMBRE.getText();    
@@ -390,7 +414,7 @@ public class Principal extends javax.swing.JFrame {
     private void PisoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PisoActionPerformed
          ImageIcon Piso = new ImageIcon(getClass(). getResource ( "/mario/BlockRoto.png" ));
         //Mandamos a imprimir la imagen en un label
-        jLabel3.setIcon(Piso);
+        IMAGEN.setIcon(Piso);
         
       String nom = NOMBRE.getText();    
    if (nom.isEmpty()) {
@@ -408,7 +432,7 @@ public class Principal extends javax.swing.JFrame {
        //Obtenemos la imagenen del boton
         ImageIcon Goomba = new ImageIcon(getClass(). getResource ( "/mario/Goomba.png" ));
         //Mandamos a imprimir la imagen en un label
-        jLabel3.setIcon(Goomba);
+       IMAGEN.setIcon(Goomba);
     
         
       String nom = NOMBRE.getText();    
@@ -429,7 +453,7 @@ public class Principal extends javax.swing.JFrame {
        //Obtenemos la imagenen del boton
         ImageIcon Koopa = new ImageIcon(getClass(). getResource ( "/mario/Koopa.png" ));
         //Mandamos a imprimir la imagen en un label
-        jLabel3.setIcon(Koopa);
+        IMAGEN.setIcon(Koopa);
    
       String nom = NOMBRE.getText();    
    if (nom.isEmpty()) {
@@ -448,7 +472,7 @@ public class Principal extends javax.swing.JFrame {
          //Obtenemos la imagenen del boton
         ImageIcon Planta = new ImageIcon(getClass(). getResource ( "/mario/Planta.png" ));
         //Mandamos a imprimir la imagen en un label
-        jLabel3.setIcon(Planta);
+        IMAGEN.setIcon(Planta);
    
       String nom = NOMBRE.getText();    
    if (nom.isEmpty()) {
@@ -467,7 +491,7 @@ public class Principal extends javax.swing.JFrame {
           //Obtenemos la imagenen del boton
         ImageIcon Muro = new ImageIcon(getClass(). getResource ( "/mario/BlockNormal.png" ));
         //Mandamos a imprimir la imagen en un label
-        jLabel3.setIcon(Muro);
+        IMAGEN.setIcon(Muro);
         
       String nom = NOMBRE.getText();    
    if (nom.isEmpty()) {
@@ -487,7 +511,7 @@ public class Principal extends javax.swing.JFrame {
           //Obtenemos la imagenen del boton
         ImageIcon Sorpresa = new ImageIcon(getClass(). getResource ( "/mario/BlockDuda.png" ));
         //Mandamos a imprimir la imagen en un label
-        jLabel3.setIcon(Sorpresa);
+        IMAGEN.setIcon(Sorpresa);
         
       String nom = NOMBRE.getText();    
    if (nom.isEmpty()) {
@@ -507,7 +531,7 @@ public class Principal extends javax.swing.JFrame {
          //Obtenemos la imagenen del boton
         ImageIcon Tubo = new ImageIcon(getClass(). getResource ( "/mario/jajaja.png" ));
         //Mandamos a imprimir la imagen en un label
-        jLabel3.setIcon(Tubo);
+        IMAGEN.setIcon(Tubo);
 
       String nom = NOMBRE.getText();    
    if (nom.isEmpty()) {
@@ -521,6 +545,31 @@ public class Principal extends javax.swing.JFrame {
                     
    }   
     }//GEN-LAST:event_TuboActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+  //Obtenemos la imagenen del boton
+        ImageIcon castillo = new ImageIcon(getClass(). getResource ( "/mario/images.jpeg" ));
+        //Mandamos a imprimir la imagen en un label
+        IMAGEN.setIcon(castillo);
+      int veces=1;
+     
+            
+      String nom = NOMBRE.getText();    
+   if (nom.isEmpty()) {
+       JOptionPane.showMessageDialog(this, "llene los campos");
+   }else {
+         
+            ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/images.jpeg" ));    
+            ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
+            this.agregar.Agregar(ingresar1);
+            JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
+            
+                    
+   }   
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -563,6 +612,7 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Goomba;
     private javax.swing.JButton Hongo;
+    private javax.swing.JLabel IMAGEN;
     private javax.swing.JButton Koopa;
     private javax.swing.JButton Ladrillo;
     private javax.swing.JButton Mario;
@@ -572,6 +622,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton Planta;
     private javax.swing.JButton Sorpresa;
     private javax.swing.JButton Tubo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
