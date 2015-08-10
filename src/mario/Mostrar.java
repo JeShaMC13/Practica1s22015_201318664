@@ -6,6 +6,7 @@
 
 package mario;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -21,12 +22,11 @@ public class Mostrar extends javax.swing.JFrame {
     static private Pila pila;
     static private ListaDoble datos;
     
- 
-    //tambien agrege como parametro pila 
-    public Mostrar(ListaDoble jeny, Pila piladatos) {
+    public Mostrar(ListaDoble jeny) {
         this.datos = jeny;
-        //cambios que agrege yoooo
-        this.pila = piladatos;
+        //vamos a llenar la pila, recorriendo la lista doble
+        this.pila = new Pila();
+        recorrerListaDoble(pila);
         initComponents();
    
         //SI HAGO ESTO ES COMO QUE SI ESTUVIERA HACIENDO UNA NUEVA LISTA
@@ -99,39 +99,57 @@ public class Mostrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     
-        String mostrar="";
-        //this.datos.Agregar();
+     //L HZ FR
         ListaDoble ja = this.datos;
         ObtenerDatos lista;
-       
         Nodo elemento = ja.Inicio;
         while (elemento != null){
-            
-            //===============================
            String nombre = elemento.datos.getNombre();
-           pila.Push(nombre);
-           String push ="";
-           nombre = push;
-            //===================================
-            elemento = elemento.siguiente;  
-          System.out.println("orden"+ push);
-            //System.out.println("Nombre: "+elemento.datos.getNombre());
-         
-           
-            
-            //imprimir nombre 
-            
-            
-            
+           ImageIcon imagen = elemento.datos.getImagen();
+          System.out.println("orden:   "+nombre+imagen);
+          elemento = elemento.siguiente;  
         }
-       //MOSTRAR.setText(mostrar);
-      
-        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //============================================
+    //L H FR
+    public void recorrerListaDoble(Pila obj)
+    {
+        ListaDoble ja = this.datos;
+        //ObtenerDatos lista;
+        Nodo elemento = ja.Inicio;
+ 
+        while (elemento != null){           
+          ObtenerDatos od = elemento.getDatos();
+          obj.Push(od);
+          elemento = elemento.siguiente;           
+        }
+        this.pila = obj;
+    }
+    
+    public void pop(Pila obj)
+    {
+        ListaDoble ja = this.datos;
+        //ObtenerDatos lista;
+        Nodo elemento = ja.Inicio;
+ 
+        while (elemento != null){           
+          ObtenerDatos od = elemento.getDatos();
+          obj.Pop();
+          elemento = elemento.siguiente;           
+        }
+    }
+    
+    
+    
+    //=============================================
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        //metodo de mostrar la pila
+        //mandar a recorrer la pila con el while
+       pop(pila);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -164,7 +182,7 @@ public class Mostrar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Mostrar(datos,pila).setVisible(true);
+                new Mostrar(datos).setVisible(true);
             }
         });
     }

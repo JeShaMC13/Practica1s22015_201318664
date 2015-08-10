@@ -352,9 +352,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_LadrilloActionPerformed
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        JOptionPane.showMessageDialog(null,"Hola");
+        //JOptionPane.showMessageDialog(null,"Hola");
        
-        Mostrar MOSTRAR = new Mostrar(agregar,pila);
+        Mostrar MOSTRAR = new Mostrar(agregar);
         MOSTRAR.setVisible(true);
        
       

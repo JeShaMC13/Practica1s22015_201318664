@@ -11,17 +11,17 @@ package mario;
  * @author Jenny
  */
 public class NodoPila {
-        Object dato1;
+        public ObtenerDatos dato1;
         NodoPila anterior1;
         NodoPila siguiente1;
         
-        public NodoPila(Object dato2){
+        public NodoPila(ObtenerDatos dato2){
             this.dato1 = dato2;
             this.anterior1 = null;
             this.siguiente1 = null;
         }
         
-        public NodoPila(NodoPila anterior1, Object dato2){
+        public NodoPila(NodoPila anterior1, ObtenerDatos dato2){
             this.anterior1 = anterior1;
             this.dato1 = dato2;
             this.siguiente1 = null;

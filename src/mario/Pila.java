@@ -29,14 +29,7 @@ NodoPila ant;
     
     
     public Pila(){
-     /*Node new_node = new Node(o);
-    if (end == null)
-      end = new_node;
-    else {
-      new_node.Next = end;
-      end = new_node;
-    }
-    size++; */
+    
       primero = null;
       ultimo= null;
       nuevo = null;
@@ -57,20 +50,7 @@ NodoPila ant;
         }
             
         listacompleta();
-        /*
-         public void insertarPush(Object dato){
-        if(Primero==null){//////////1 caso(lista vacia)
-        Primero = new NodoListaPila(dato);
-        Ultimo = Primero;
-        }
-        else{
-            Nuevo = new NodoListaPila(Ultimo, dato);
-            Ultimo.Der = Nuevo;
-            Ultimo = Nuevo;
-        }despliegaListaPila();
-    }
-        */
-        
+     
     }
         public void Pop(){
             if(primero == null){
@@ -81,10 +61,11 @@ NodoPila ant;
                     ultimo= null;
                     
                 }else{
-                    ultimo= ultimo.anterior1;
+                   // ultimo= ultimo.anterior1;
+                    ultimo = primero;
                     ultimo.siguiente1 = null;
                 }
-            }
+            }listacompleta();
             
         }
         
@@ -92,88 +73,17 @@ NodoPila ant;
             aux = primero;
              JOptionPane.showMessageDialog(null, "Lista completa");
         while(aux!=null){
-             /*MostrarObjetos objetos = new MostrarObjetos();
-             objetos.add((Component) aux.dato1);*/
-           // Mostrar mostrar = new Mostrar();
              JOptionPane.showMessageDialog(null, "Lista"+aux.dato1);
              System.out.println(aux.dato1);      
              
              aux = aux.siguiente1;
         }
-        
-       
-        
-        
-        
-        }
+           }
 
-    void Push(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+ 
 
     
         
     }
-    /*
-    public class LinkedStack {
-
-  class Node {
-    Object elem;
-    Node Next;
-
-    public Node(Object o) {
-      elem = o;
-      Next = null;
-    }
-  }
-
-  Node end;
-  int size;
-
-  public LinkedStack() {
-    end = null;
-    size = 0;
-  }
-
-  public void push(Object o) {
-    Node new_node = new Node(o);
-    if (end == null)
-      end = new_node;
-    else {
-      new_node.Next = end;
-      end = new_node;
-    }
-    size++;
-  }; // inserts an object onto the stack
-
-  public Object pop() {
-    if (end == null)
-      return null;
-    ;
-    Object o = end.elem;
-    end = end.Next;
-    size--;
-    return o;
-  }// Gets the object from the stack
-
-  public boolean isEmpty() {
-
-    return (size == 0);
-  }
-
-  public int size() {
-
-    return size;
-  }
-
-  public Object end() {
-
-    if (end == null)
-      return null;
-    else
-      return end.elem;
-  }
-
-} // class LinkedStack    */
     
 
