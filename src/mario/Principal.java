@@ -287,6 +287,7 @@ public class Principal extends javax.swing.JFrame {
             ImageIcon mar = new ImageIcon(getClass(). getResource ( "/mario/Moneda.png" ));    
             ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
             this.agregar.Agregar(ingresar1);
+            
             JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
            // JOptionPane.showMessageDialog(null, agregar.Agregar(ingresar1));
       
@@ -353,7 +354,7 @@ public class Principal extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JOptionPane.showMessageDialog(null,"Hola");
        
-        Mostrar MOSTRAR = new Mostrar();
+        Mostrar MOSTRAR = new Mostrar(agregar);
         MOSTRAR.setVisible(true);
        
       

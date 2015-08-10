@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
- *
+ *hola jenny!
  * @author Jenny
  */
 public class Mostrar extends javax.swing.JFrame {
@@ -19,13 +19,14 @@ public class Mostrar extends javax.swing.JFrame {
      * Creates new form Mostrar
      */
     private Pila pila;
-    private ListaDoble datos;
+    static private ListaDoble datos;
  
     
-    public Mostrar() {
+    public Mostrar(ListaDoble jeny) {
+        this.datos = jeny;
         initComponents();
-    pila = new Pila();
-    datos = new ListaDoble();
+    //pila = new Pila();
+    //datos = new ListaDoble();
  
     
     }
@@ -48,14 +49,15 @@ public class Mostrar extends javax.swing.JFrame {
 
         jLabel1.setText("Seleccionar tipo de ordenamiento para mostrar datos:");
 
-        jButton1.setText("Cola");
+        jButton1.setText("Pila");
+        jButton1.setActionCommand("Pila");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Pila");
+        jButton2.setText("Cola");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -102,19 +104,24 @@ public class Mostrar extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      
         String mostrar="";
-        this.datos.Agregar();
-        
+        //this.datos.Agregar();
+        ListaDoble ja = this.datos;
         ObtenerDatos lista;
         lista = this.datos.getNextAgregar();
-        while(lista != null){
+        /*while(lista != null){
         mostrar=mostrar + "Nombre:" + lista.getNombre()+" " + "Objeto:" +lista.getImagen()+"Fin objetos";
+        
         lista = this.datos.getNextAgregar();
         
         }
-       // MOSTRAR.setText(mostrar);
-        JLabel contenido = new JLabel(mostrar);
-        getContentPane().add(contenido);
-        this.setSize(500, 500);
+        */
+        Nodo elemento = ja.Inicio;
+        while (elemento != null){
+            System.out.println("Nombre: "+elemento.datos.getNombre());
+            elemento = elemento.siguiente;            
+        }
+       MOSTRAR.setText(mostrar);
+      
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -152,7 +159,7 @@ public class Mostrar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Mostrar().setVisible(true);
+                new Mostrar(datos).setVisible(true);
             }
         });
     }

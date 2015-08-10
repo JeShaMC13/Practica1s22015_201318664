@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author Jenny
  */
 public class ListaDoble {
-  private Nodo Inicio;
+    public Nodo Inicio;
     private Nodo Fin;
     private Nodo registro;
     private int length;

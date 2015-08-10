@@ -13,7 +13,7 @@ package mario;
 public class Nodo {
 Nodo siguiente;
 Nodo anterior;
-private ObtenerDatos datos;
+public ObtenerDatos datos;
 
 
     public Nodo(Nodo siguiente, Nodo anterior, ObtenerDatos datos) {
@@ -38,23 +38,6 @@ private ObtenerDatos datos;
 
 
 
-/*
-//Constructor para cuando no hay nodos
-public Nodo(int elementoEntrada){
- this(elementoEntrada, null, null);
-
-}
-//constructor para cuando ya hay nodos
- public Nodo(int El, Nodo siguiente, Nodo anterior) {
-        this.dato = El;
-        this.siguiente = siguiente;
-        this.anterior = anterior;
-    }
- 
-public void setNombre(int dato) {
-        this.dato = dato;
-    }
-*/
 
     public void setSiguiente(Nodo siguiente) {
         this.siguiente = siguiente;
