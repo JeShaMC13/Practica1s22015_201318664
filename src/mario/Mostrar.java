@@ -43,7 +43,6 @@ public class Mostrar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        MOSTRAR = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,8 +63,6 @@ public class Mostrar extends javax.swing.JFrame {
             }
         });
 
-        MOSTRAR.setText("jLabel2");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,16 +70,14 @@ public class Mostrar extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
+                        .addGap(91, 91, 91)
                         .addComponent(jButton2)
-                        .addGap(30, 30, 30)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(MOSTRAR, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(41, Short.MAX_VALUE))
+                        .addComponent(jLabel1)))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,9 +88,7 @@ public class Mostrar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addGap(18, 18, 18)
-                .addComponent(MOSTRAR, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(595, Short.MAX_VALUE))
         );
 
         pack();
@@ -107,7 +100,7 @@ public class Mostrar extends javax.swing.JFrame {
         //this.datos.Agregar();
         ListaDoble ja = this.datos;
         ObtenerDatos lista;
-        lista = this.datos.getNextAgregar();
+        //lista = this.datos.getNextAgregar();
         /*while(lista != null){
         mostrar=mostrar + "Nombre:" + lista.getNombre()+" " + "Objeto:" +lista.getImagen()+"Fin objetos";
         
@@ -118,9 +111,14 @@ public class Mostrar extends javax.swing.JFrame {
         Nodo elemento = ja.Inicio;
         while (elemento != null){
             System.out.println("Nombre: "+elemento.datos.getNombre());
-            elemento = elemento.siguiente;            
+            elemento = elemento.siguiente;  
+            
+            //imprimir nombre 
+            
+            
+            
         }
-       MOSTRAR.setText(mostrar);
+       //MOSTRAR.setText(mostrar);
       
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -165,7 +163,6 @@ public class Mostrar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel MOSTRAR;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
