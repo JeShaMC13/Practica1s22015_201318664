@@ -18,14 +18,18 @@ public class Mostrar extends javax.swing.JFrame {
     /**
      * Creates new form Mostrar
      */
-    private Pila pila;
+    static private Pila pila;
     static private ListaDoble datos;
- 
     
-    public Mostrar(ListaDoble jeny) {
+ 
+    //tambien agrege como parametro pila 
+    public Mostrar(ListaDoble jeny, Pila piladatos) {
         this.datos = jeny;
+        //cambios que agrege yoooo
+        this.pila = piladatos;
         initComponents();
-    //pila = new Pila();
+   
+        //SI HAGO ESTO ES COMO QUE SI ESTUVIERA HACIENDO UNA NUEVA LISTA
     //datos = new ListaDoble();
  
     
@@ -100,18 +104,21 @@ public class Mostrar extends javax.swing.JFrame {
         //this.datos.Agregar();
         ListaDoble ja = this.datos;
         ObtenerDatos lista;
-        //lista = this.datos.getNextAgregar();
-        /*while(lista != null){
-        mostrar=mostrar + "Nombre:" + lista.getNombre()+" " + "Objeto:" +lista.getImagen()+"Fin objetos";
-        
-        lista = this.datos.getNextAgregar();
-        
-        }
-        */
+       
         Nodo elemento = ja.Inicio;
         while (elemento != null){
-            System.out.println("Nombre: "+elemento.datos.getNombre());
+            
+            //===============================
+           String nombre = elemento.datos.getNombre();
+           pila.Push(nombre);
+           String push ="";
+           nombre = push;
+            //===================================
             elemento = elemento.siguiente;  
+          System.out.println("orden"+ push);
+            //System.out.println("Nombre: "+elemento.datos.getNombre());
+         
+           
             
             //imprimir nombre 
             
@@ -157,7 +164,7 @@ public class Mostrar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Mostrar(datos).setVisible(true);
+                new Mostrar(datos,pila).setVisible(true);
             }
         });
     }

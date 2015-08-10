@@ -345,7 +345,7 @@ public class Principal extends javax.swing.JFrame {
             ObtenerDatos ingresar1 = new ObtenerDatos( nom, mar);
             this.agregar.Agregar(ingresar1);
             JOptionPane.showMessageDialog(this, "Numero Actual de objetos " + this.agregar.Length());
-                    pila.Push(ingresar1);
+                 //   pila.Push(ingresar1);
    }
         
         
@@ -354,7 +354,7 @@ public class Principal extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JOptionPane.showMessageDialog(null,"Hola");
        
-        Mostrar MOSTRAR = new Mostrar(agregar);
+        Mostrar MOSTRAR = new Mostrar(agregar,pila);
         MOSTRAR.setVisible(true);
        
       

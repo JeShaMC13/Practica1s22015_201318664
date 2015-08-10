@@ -101,23 +101,15 @@ NodoPila ant;
              aux = aux.siguiente1;
         }
         
-        /*
-        public  void despliegaListaPila(){
-        Aux = Primero;
-        System.out.println ("#########   LISTA COMPLETA   ###########");
-        while (Aux != null) {
-            System.out.println (Aux.info);
-            Aux = Aux.Der;
+       
+        
+        
+        
         }
-        System.out.println ("########################################");
+
+    void Push(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-}
-        */
-        
-        
-        
-        
-        }
 
     
         
