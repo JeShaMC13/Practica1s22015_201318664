@@ -27,6 +27,7 @@ public class Mostrar extends javax.swing.JFrame {
         //vamos a llenar la pila, recorriendo la lista doble
         this.pila = new Pila();
         recorrerListaDoble(pila);
+        //recorrerpop(pila);
         initComponents();
    
         //SI HAGO ESTO ES COMO QUE SI ESTUVIERA HACIENDO UNA NUEVA LISTA
@@ -52,7 +53,7 @@ public class Mostrar extends javax.swing.JFrame {
 
         jLabel1.setText("Seleccionar tipo de ordenamiento para mostrar datos:");
 
-        jButton1.setText("Pila");
+        jButton1.setText("Cola");
         jButton1.setActionCommand("Pila");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,7 +82,7 @@ public class Mostrar extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jLabel1)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,7 +93,7 @@ public class Mostrar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addContainerGap(595, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -100,14 +101,19 @@ public class Mostrar extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      //L HZ FR
+        String mostrar="";
         ListaDoble ja = this.datos;
         ObtenerDatos lista;
         Nodo elemento = ja.Inicio;
         while (elemento != null){
            String nombre = elemento.datos.getNombre();
            ImageIcon imagen = elemento.datos.getImagen();
-          System.out.println("orden:   "+nombre+imagen);
-          elemento = elemento.siguiente;  
+           mostrar = mostrar +"Nombre objetos:   "+nombre+"Imagen objeto:"+ imagen;
+           //System.out.println("orden:   " );
+           JOptionPane.showMessageDialog(rootPane, imagen, nombre, WIDTH);
+          // MOSTRAR.add(nombre, this);
+          elemento = elemento.siguiente;   
+          
         }
        
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -119,37 +125,41 @@ public class Mostrar extends javax.swing.JFrame {
         ListaDoble ja = this.datos;
         //ObtenerDatos lista;
         Nodo elemento = ja.Inicio;
- 
         while (elemento != null){           
           ObtenerDatos od = elemento.getDatos();
+         
           obj.Push(od);
           elemento = elemento.siguiente;           
         }
         this.pila = obj;
     }
     
-    public void pop(Pila obj)
+    
+    
+    public void recorrerpop(Pila pop)
     {
-        ListaDoble ja = this.datos;
+     ListaDoble ja = this.datos;
         //ObtenerDatos lista;
         Nodo elemento = ja.Inicio;
- 
         while (elemento != null){           
           ObtenerDatos od = elemento.getDatos();
-          obj.Pop();
-          elemento = elemento.siguiente;           
-        }
+          //String nom = elemento.datos.getNombre();
+          //ImageIcon img = elemento.datos.getImagen();
+          pop.Pop(od);
+          ImageIcon amagg = od.getImagen();
+          String nomm = od.getNombre();
+          JOptionPane.showMessageDialog(rootPane, amagg, nomm, WIDTH);
+          elemento = elemento.anterior;           
+    }  //this.pila = pop;
     }
-    
-    
-    
+
     //=============================================
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         //metodo de mostrar la pila
         //mandar a recorrer la pila con el while
-       pop(pila);
-        
+   recorrerpop(pila);
+   
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

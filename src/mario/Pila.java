@@ -52,30 +52,32 @@ NodoPila ant;
         listacompleta();
      
     }
-        public void Pop(){
+        public void Pop(ObtenerDatos dato2){
             if(primero == null){
                  JOptionPane.showMessageDialog(null, "Lista vacia");
-            }else{
+            }
+            //else{
                 if(primero==ultimo){
-                    primero = null;
-                    ultimo= null;
-                    
-                }else{
-                   // ultimo= ultimo.anterior1;
-                    ultimo = primero;
+                   
+                     ultimo= ultimo.anterior1;
+                   // ultimo = primero;
                     ultimo.siguiente1 = null;
-                }
-            }listacompleta();
+                     primero = null;
+                    ultimo= null;
+                }else{
+                   
+                }listacompleta();
+            }
             
-        }
+
         
         public void listacompleta(){
             aux = primero;
-             JOptionPane.showMessageDialog(null, "Lista completa");
+             //JOptionPane.showMessageDialog(null, "Lista completa");
         while(aux!=null){
-             JOptionPane.showMessageDialog(null, "Lista"+aux.dato1);
-             System.out.println(aux.dato1);      
-             
+             //JOptionPane.showMessageDialog(null, "Lista"+aux.dato1);
+            // System.out.println(aux.dato1);   
+            //JOptionPane.showMessageDialog(null, aux.dato1);
              aux = aux.siguiente1;
         }
            }
