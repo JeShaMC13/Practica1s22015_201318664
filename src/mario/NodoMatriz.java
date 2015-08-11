@@ -11,19 +11,29 @@ package mario;
  * @author Jenny
  */
 public class NodoMatriz {
+    NodoMatriz datos3; 
    NodoMatriz SiguienteX;
    NodoMatriz SiguienteY;
    NodoMatriz AnteriorY;
    NodoMatriz AnteriorX;
-
-   
-    public NodoMatriz(NodoMatriz SiguienteX, NodoMatriz AnteriorX, NodoMatriz SiguienteY, NodoMatriz AnteriorY) {
+   public NodoMatriz(NodoMatriz datos3, NodoMatriz SiguienteX, NodoMatriz SiguienteY, NodoMatriz AnteriorY, NodoMatriz AnteriorX) {
+        this.datos3 = datos3;
         this.SiguienteX = SiguienteX;
-        this.AnteriorX = AnteriorX;
         this.SiguienteY = SiguienteY;
         this.AnteriorY = AnteriorY;
+        this.AnteriorX = AnteriorX;
     }
 
+ NodoMatriz(ObtenerDatos datos3){
+//     
+ }  
+   
+
+     public void setDatos3(NodoMatriz datos3) {
+        this.datos3 = datos3;
+    }
+   
+ 
     public void setSiguienteX(NodoMatriz SiguienteX) {
         this.SiguienteX = SiguienteX;
     }

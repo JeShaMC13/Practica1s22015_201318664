@@ -34,10 +34,6 @@ public ObtenerDatos datos;
     public ObtenerDatos getDatos() {
         return datos;
     }
-//int dato;
-
-
-
 
     public void setSiguiente(Nodo siguiente) {
         this.siguiente = siguiente;
