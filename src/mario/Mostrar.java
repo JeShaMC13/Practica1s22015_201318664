@@ -61,7 +61,7 @@ public class Mostrar extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Cola");
+        jButton2.setText("Pila");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
